@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Imperial+Script&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+
+
+/* font and color customize */
+@theme {
+  --font-roboto: "Roboto", serif;
+  --font-imper: "Imperial Script", serif;
+  --font-boogaloo: "Boogaloo", serif;
+
+
+
+}
+
+/* container width customize(increacing rem is narrow container ) */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 14rem; 
+}
+
+
+.swal2-confirm {
+  background-color: black;
+  color: red;
+}
+
+.swal2-cancel{
+  @apply  bg-amber-400 text-gray-800;
+  }
+
+
+
+  
+   /* /* print နှိပ်ရင် responsive ညီအောင်  */
+  @media print {
+    
+    .container {
+      padding: 0;
+    }
+   
+  }
+
+
+  
+  
+
+
+
+

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title >Invoice App</title>
+  <link rel="icon" href="./src/img/843155.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Primary Meta Tags -->
+<title>Invoice app </title>
+<meta name="title" content="Invoice app " />
+<meta name="description" content="Testing " />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://metatags.io/" />
+<meta property="og:title" content="Invoice app " />
+<meta property="og:description" content="Testing " />
+<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://metatags.io/" />
+<meta property="twitter:title" content="Invoice app " />
+<meta property="twitter:description" content="Testing " />
+<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+
+<!-- Meta Tags Generated with https://metatags.io -->
+
+</head>
+<body>
+
+
+
+    <main class="flex flex-col h-screen">
+      <header class="py-4 px-4 ">
+
+      <div class="container mx-auto print:p-0">
+        <h1 class="font-bold font-boogaloo text-3xl">MMS Solutions</h1>
+        <p class="text-slate-950 font-boogaloo text-lg dark:text-amber-600">Invoice App</p>
+      </div>
+      </header>
+
+      <section class="">
+       <div class="container mx-auto print:p-0 ">
+          <form action="" class="print:hidden" id="addItemForm" >
+      
+            <div class="grid grid-cols-4  px-4 gap-4 bg-slate-300 rounded-lg py-2">
+                <div class="col-span-2">
+                  
+
+                <select id="productSelect" name="product-name" class="border-2 border-slate-950 text-gray-900 text-sm rounded block w-full p-2.5   focus-visible:outline-none placeholder:text-slate-400" required>
+                  <option value="" selected class="text-slate-400 " >Choose a Products</option>
+             
+                </select>
+
+
+                </div>
+                <div class="col-span-1">
+                 
+                <input type="text" id="first_name" name="quantity" class=" border-2 border-slate-950 text-gray-900 text-sm rounded  block w-full p-2.5  focus-visible:outline-none placeholder:text-slate-400
+                " placeholder="Quantity" required />
+              </div>
+              <div class="col-span-1 flex-nowrap">
+                <button type="submit" class="w-full h-full border-2  hover:text-yellow-500 font-boogaloo bg-slate-950  rounded-lg text-2xl me-2 mb-2 border-slate-950  cursor-pointer font-bold  text-yellow-500">Add Items</button>
+
+              </div>
+            </div>
+
+          </form>
+          <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 dark:text-amber-500 text-center">
+                            Product name
+                        </th>
+                        <th scope="col" class="px-6 py-3 dark:text-amber-500 text-end">
+                            Price
+                        </th>
+                        <th scope="col" class="px-6 py-3 dark:text-amber-500 text-end">
+                            Quantity
+                        </th>
+                        <th scope="col" class="px-6 py-3 dark:text-amber-500 text-end">
+                            Cost
+                        </th>
+                        <th scope="col" class="px-6 py-3 dark:text-amber-500 text-end print:hidden" >
+                          Action
+                            <span class="sr-only ">Remove</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="recordGroup">
+                    <!-- <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row" class="px-6 py-4 text-center  font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Apple MacBook Pro 17"
+                        </th>
+                        <td class="px-6 py-4 text-end">
+                            Silver
+                        </td>
+                        <td class="px-6 py-4 text-end">
+                            Laptop
+                        </td>
+                        <td class="px-6 py-4 text-end">
+                            $2999
+                        </td>
+                        <td class="px-6 py-4 text-end ">
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Remove</a>
+                        </td>
+                    </tr> -->
+                   
+        <tr  class="hidden last:table-row bg-white border-b text-center dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <th scope="row" colspan="5"  class="  px-6 py-3  text-center  text-3xl font-bold text-amber-400  ">
+               There is no record yet 
+        </th>          
+        </tr>
+          
+            
+                  
+                </tbody>
+                <tfoot>
+                  
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" colspan="3" class="px-6 py-4 text-center   font-medium text-gray-900 whitespace-nowrap dark:text-yellow-500">
+                       Total 
+                  </th>
+                  <td class="px-6 py-4 text-end record-total">
+                      0
+                  </td>
+                  <td>
+  
+                  </td>
+                
+                   
+                </tr>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <th scope="row" colspan="3" class="px-6 py-4 text-center   font-medium text-gray-900 whitespace-nowrap dark:text-yellow-500">
+                    Tax 
+                </th>
+                <td class="px-6 py-4 text-end record-tax">
+                   0
+                </td>
+                <td>
+                 
+                </td>
+                
+              
+                 
+              </tr>
+              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" colspan="3" class="px-6 py-4 text-center   font-medium text-gray-900 whitespace-nowrap dark:text-yellow-500">
+                  Net Total 
+              </th>
+              <td  class="px-6 py-4 text-end record-net-total">
+                 0
+              </td>
+              <td></td>
+           
+              
+            
+               
+            </tr>
+                </tfoot>
+            </table>
+
+          </div>
+          
+       </div>
+       
+      </section>
+      
+
+      <section id="sideBar" class="fixed right-0  w-[450px] bg-slate-400 translate-x-full  h-screen">
+        <div class="py-4 px-4 flex justify-between items-center">
+         <div class="">
+          <h1 class="font-bold  font-boogaloo text-3xl">Manage Inventory</h1>
+          <p class="text-slate-700 font-boogaloo text-lg dark:text-amber-600">Available Items</p>
+        </div>
+         <div class="">
+       <button class="cursor-pointer text-red-600" id="closeSideBarBtn"> 
+        <i class="fa-solid fa-x pointer-events-none"></i>
+       </button>
+         </div>
+        </div>
+       <div class="" id="productGroup">
+
+        
+       
+       </div>
+       
+
+       <div class="bg-slate-300 rounded shadow-sm m-4">
+       <form action="">
+        <div class="grid grid-cols-2 py-2 px-4 gap-3">
+          <div class="col-span-2">
+            <input type="text" id="newProductName" class=" border-2 border-slate-950 text-gray-900 text-sm rounded  block w-full p-2.5  focus-visible:outline-none placeholder:text-slate-600 " placeholder="New Product Name" required />
+          </div>
+         <div class="col-span-1">
+          <input type="number" id="newProductPrice" class=" border-2 border-slate-950 text-gray-900 text-sm rounded  block w-full p-2.5  focus-visible:outline-none placeholder:text-slate-600 " placeholder="New Product Price" required />
+         </div>
+         <div class="col-span-1">
+          <button type="button" id="addNewBtn" class="text-white bg-slate-900  font-medium  text-sm px-4 py-2 me-2 mb-2 focus:outline-none rounded-sm cursor-pointer font-boogaloo w-full h-full dark:text-amber-500">Add New</button>
+         </div>
+         </div>
+       </form>
+       </div>
+       
+        
+      </section>
+
+      <div class=" hidden print:block mt-2 text-center text-amber-500 font-bold text-3xl">၀ယ်ယူအားပေးမှုကို ကျေးဇူးတင်ပါသည်</div>
+
+
+
+
+      <footer class="mt-auto">
+      <div class="container mx-auto print:hidden">
+       <div class="flex justify-end d-none">
+
+        <button type="button" id="manageInventoryBtn" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900  border-2 border-slate-900 hover:bg-slate-900 hover:text-stone-200 dark:text-amber-500  dark:hover:text-amber-500  rounded-sm cursor-pointer font-boogaloo">Manage Inventory</button>
+
+        <button id="printBtn" class="text-white bg-slate-900  font-medium  text-sm px-4 py-2 me-2 mb-2 focus:outline-none rounded-sm cursor-pointer font-boogaloo dark:text-amber-500">Print</button>
+
+       </div>
+      </div>
+      </footer>
+
+      
+
+
+      <template id="productCardTemplate">
+        <div class="flex justify-between border-2 mb-2 border-slate-950 py-2 px-2 mx-4 rounded product-card">
+          <h1 class="product-name"></h1>
+        <p> <span  class="product-prices"></span> mmk</p>
+      </div>
+      </template>
+
+      <template id="recordRowTemplate">
+        <tr class="record-row bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+          <th scope="col" class="px-6 py-3 text-center record-product-name dark:text-amber-500">
+              Product name
+          </th>
+          <th scope="col " class=" dark:text-amber-500 px-6 py-3 text-end record-product-price">
+              Price
+          </th>
+          <th scope="col " class=" dark:text-amber-500 px-6 py-3 text-end ">
+            <button class="border quantity-minus  border-amber-500 rounded-full active:scale-90 print:hidden  text-yellow-400 w-6 h-6 cursor-pointer">
+              <i class="fa-solid fa-minus pointer-events-none"></i>
+            </button>
+           <span class="record-quantity mx-1">Quantity</span>
+           <button class="border quantity-add border-amber-500 rounded-full  active:scale-90 print:hidden text-yellow-400 w-6 h-6 cursor-pointer">
+              <i class="fa-solid fa-plus pointer-events-none"></i>
+           </button>
+          </th>
+          <th scope="col " class=" dark:text-amber-500 px-6 py-3 text-end record-cost">
+              Cost
+          </th>
+          <td class="px-6 py-4 text-end ">
+            <button class="font-medium text-yellow-500 dark:text-yellow-500 hover:underline record-remove print:hidden">Remove</button>
+        </td>
+      </tr>
+      </template>
+
+    
+
+    </main>
+
+
+
+
+
+
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

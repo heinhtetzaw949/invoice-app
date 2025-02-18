@@ -1,0 +1,17 @@
+export let app = document.querySelector("#app");
+export let manageInventoryBtn = document.querySelector("#manageInventoryBtn");
+export let closeSideBarBtn = document.querySelector("#closeSideBarBtn");
+export let sideBar = document.querySelector("#sideBar");
+export let addNewBtn = document.querySelector("#addNewBtn");
+export let newProductName = document.querySelector("#newProductName");
+export let newProductPrice = document.querySelector("#newProductPrice");
+export let productGroup = document.querySelector("#productGroup");
+export let productCardTemplate = document.querySelector("#productCardTemplate");
+export let productSelect = document.querySelector("#productSelect");
+export let addItemForm = document.querySelector("#addItemForm");
+export let recordRowTemplate = document.querySelector("#recordRowTemplate");
+export let recordGroup = document.querySelector("#recordGroup");
+export let recordTotal = document.querySelector(".record-total");
+export let recordTax = document.querySelector(".record-tax");
+export let recordNetTotal = document.querySelector(".record-net-total");
+export let printBtn = document.querySelector("#printBtn");
