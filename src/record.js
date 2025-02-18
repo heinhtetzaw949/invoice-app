@@ -34,7 +34,7 @@ export let addItemFormHandler = (event)=>{
           if (result.isConfirmed) {
             //formData ကနေ quantity ကိုယူရင် string အနေနဲ့မို့ Number ပြောင်းရတာ
             
-             updateRecordQuantity(isExistedRecord.getAttribute("id"),Number(formData.get("quantity")))
+             updateRecordQuantity(isExistedRecord.getAttribute("id"),parseInt(formData.get("quantity")))
           }
         });
        }
@@ -72,7 +72,7 @@ export let addItemFormHandler = (event)=>{
     export let calculateRecordCostTotal = ()=>{
         let total = 0;
         recordGroup.querySelectorAll(".record-cost").forEach(el=>{
-            total += Number(el.innerText);
+            total += parseInt(el.innerText);
         })
         console.log(total)
 
@@ -114,7 +114,7 @@ export let addItemFormHandler = (event)=>{
     let recordQuantity = currentRecordRow.querySelector(".record-quantity");
     let recordCost = currentRecordRow.querySelector(".record-cost");
 
-    recordQuantity.innerText = Number(recordQuantity.innerText) + 1;
+    recordQuantity.innerText = parseFloat(recordQuantity.innerText) + 1;
     
     recordCost.innerText = recordQuantity.innerText * recordProductPrice.innerText;
 
@@ -129,7 +129,7 @@ export let addItemFormHandler = (event)=>{
     let recordCost = currentRecordRow.querySelector(".record-cost");
 
    if(recordQuantity.innerText>1){
-    recordQuantity.innerText = Number(recordQuantity.innerText) - 1;
+    recordQuantity.innerText = parseInt(recordQuantity.innerText) - 1;
     
     recordCost.innerText = recordQuantity.innerText * recordProductPrice.innerText;
    }
@@ -148,7 +148,7 @@ export let addItemFormHandler = (event)=>{
     let recordCost = currentRecordRow.querySelector(".record-cost");
 
     if(recordQuantity.innerText>1 || newQuantity > 0 ){
-      recordQuantity.innerText = Number(recordQuantity.innerText) + newQuantity;
+      recordQuantity.innerText = parseInt(recordQuantity.innerText) + newQuantity;
       
       recordCost.innerText = recordQuantity.innerText * recordProductPrice.innerText;
      }
